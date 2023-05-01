@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.MenuController">
+   <children>
+      <Button layoutX="77.0" layoutY="296.0" mnemonicParsing="false" onAction="#onExitPressed" prefHeight="45.0" prefWidth="95.0" text="離開">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="400.0" fitWidth="607.0" layoutX="-2.0" layoutY="1.0">
+         <image>
+            <Image url="@../../../../校門.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="210.0" layoutY="36.0" text="小中大富翁">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="253.0" layoutY="296.0" mnemonicParsing="false" onAction="#onStartPressed" prefHeight="45.0" prefWidth="95.0" text="開始遊戲">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="180.0" fitWidth="324.0" layoutX="140.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ncu.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="436.0" layoutY="296.0" mnemonicParsing="false" onAction="#onOptionsPressed" prefHeight="45.0" prefWidth="95.0" text="遊戲說明">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.OptionsController">
+   <children>
+      <Label layoutX="212.0" layoutY="14.0" prefHeight="89.0" prefWidth="198.0" text="遊戲說明">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Button layoutX="245.0" layoutY="333.0" mnemonicParsing="false" onAction="#onExitPressed" prefHeight="40.0" prefWidth="111.0" text="了解並退出">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="54.0" layoutY="81.0" text="在疫情期間&#10;為了不讓熱愛中央的莘莘學子&#10;太過於想念中央&#10;所以我們打造了以中央為主題的大富翁&#10;小中大富翁&#10;讓大家在家也能在校園中漫步&#10;順便和自己的朋友增進感情" />
+      <Label layoutX="54.0" layoutY="210.0" text="當湊齊同樣顏色的土地會有加乘效果&#10;n個一樣會有(n-1)倍加成&#10;車站則是n個會有(1 + 0.5n)倍&#10;&#10;在土地上每多一個房子&#10;該土地的罰款就多一倍&#10;&#10;進監獄的話須在監獄待2回合&#10;進醫院的話須在醫院待1回合" />
+      <Label layoutX="344.0" layoutY="81.0" text="機會&#10;當你到機會時將會隨機跳出1-100的數字x&#10;如果是40以下則從對手那獲得x*100元&#10;如果是41-80則給對手(x-40)*100元&#10;如果是81-89錢翻倍&#10;如果是90-98錢減半&#10;如果是99對方瞬間沒錢&#10;如果是100自己沒錢(刺激吧!)" />
+      <Label layoutX="344.0" layoutY="210.0" text="命運&#10;當你到機會時將會隨機跳出1-100的數字x&#10;如果是40以下則給對手x*100元&#10;如果是41-80則從對手那獲得(x-40)*100元&#10;如果是81-98錢翻倍雙方錢變成50000&#10;如果是99對方瞬間沒錢&#10;如果是100自己沒錢" />
+   </children>
+</Pane>

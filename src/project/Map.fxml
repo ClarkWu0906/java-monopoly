@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.MapController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="2.0" layoutY="11.0">
+         <image>
+            <Image url="@MAP2.png" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="map" layoutX="8.0" layoutY="17.0" prefHeight="376.0" prefWidth="585.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.20001220703125" minWidth="10.0" prefWidth="50.2000244140625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.20001220703125" minWidth="10.0" prefWidth="59.800036621093746" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.4000244140625" minWidth="10.0" prefWidth="66.19996337890623" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.60003662109375" minWidth="10.0" prefWidth="71.20002441406251" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="1.1999877929687557" prefWidth="63.99997558593748" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.800048828125" minWidth="10.0" prefWidth="76.5999755859375" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.80002441406253" minWidth="10.0" prefWidth="71.79997558593749" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.800048828125" minWidth="10.0" prefWidth="73.59997558593744" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.800048828125" minWidth="10.0" prefWidth="55.200024414062455" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="52.80000610351563" minHeight="10.0" prefHeight="52.80000610351563" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="49.59999389648438" minHeight="10.0" prefHeight="47.99999389648438" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.400000000000006" minHeight="10.0" prefHeight="50.400000000000006" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="45.59998779296873" minHeight="10.0" prefHeight="41.59998779296873" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="43.19999999999999" minHeight="10.0" prefHeight="40.99999389648437" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="45.20001220703122" minHeight="10.0" prefHeight="39.20000610351562" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="42.39999999999998" minHeight="10.0" prefHeight="33.19998779296873" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="52.79999389648441" minHeight="10.0" prefHeight="29.60003662109375" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="39.19996337890626" minHeight="8.000006103515602" prefHeight="39.19996337890626" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane fx:id="p2" onDragDetected="#move2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightpink;" GridPane.rowIndex="8" />
+            <Pane fx:id="p1" onDragDetected="#move1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue;" GridPane.rowIndex="8" />
+            <TextField fx:id="num" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Button fx:id="roll1" mnemonicParsing="false" onAction="#rollthedice1" style="-fx-background-color: lightblue;" text="roll(1~10)" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <Button fx:id="roll2" mnemonicParsing="false" onAction="#rollthedice2" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: lightpink;" text="roll(1~10)" visible="false" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Label prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: lightblue;" text="P1" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: lightpink;" text="P2" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button fx:id="check1" mnemonicParsing="false" onAction="#checkland1" text="Check" visible="false" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <RadioButton fx:id="N" mnemonicParsing="false" text="NO" visible="false" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="YorN" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="Y" mnemonicParsing="false" prefHeight="11.0" prefWidth="61.0" text="BUY" toggleGroup="$YorN" visible="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button fx:id="build1" mnemonicParsing="false" onAction="#checkhouse1" text="Build" visible="false" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Button fx:id="build2" mnemonicParsing="false" onAction="#checkhouse2" text="Build" visible="false" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Label fx:id="buy" prefHeight="40.0" prefWidth="70.0" text="Label" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label fx:id="m1" prefHeight="18.0" prefWidth="91.0" style="-fx-background-color: lightblue;" text="100000" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="m2" prefHeight="18.0" prefWidth="73.0" style="-fx-background-color: lightpink;" text="100000" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <children>
+                  <Label layoutX="1.0" layoutY="1.0" prefHeight="18.0" prefWidth="66.0" style="-fx-background-color: red;" text="松苑餐聽" textFill="WHITE" />
+                  <Label fx:id="l1_2" layoutX="21.0" layoutY="12.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_2" layoutX="21.0" layoutY="12.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_2" layoutX="37.0" layoutY="12.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
+               <children>
+                  <Label layoutX="4.0" layoutY="1.0" prefHeight="18.0" prefWidth="66.0" style="-fx-background-color: red;" text="工程二館" textFill="WHITE" />
+                  <Label fx:id="l1_3" layoutX="17.0" layoutY="12.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_3" layoutX="17.0" layoutY="12.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_3" layoutX="37.0" layoutY="11.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="8">
+               <children>
+                  <Label layoutY="1.0" prefHeight="18.0" prefWidth="74.0" style="-fx-background-color: red;" text="志道樓" textAlignment="CENTER" textFill="WHITE" />
+                  <Label fx:id="l1_5" layoutX="23.0" layoutY="12.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_5" layoutX="23.0" layoutY="12.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_5" layoutX="43.0" layoutY="12.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="8">
+               <children>
+                  <Label layoutX="2.0" prefHeight="18.0" prefWidth="72.0" style="-fx-background-color: red;" text="男11宿舍" textFill="WHITE" />
+                  <Label fx:id="l1_7" layoutX="21.0" layoutY="12.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_7" layoutX="21.0" layoutY="12.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_7" layoutX="41.0" layoutY="14.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="7">
+               <children>
+                  <Label layoutX="3.0" layoutY="-1.0" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: lightgreen;" text="松&#10;果&#10;">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Label>
+                  <Label fx:id="l1_9" layoutX="12.0" layoutY="6.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_9" layoutX="13.0" layoutY="6.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_9" layoutX="28.0" layoutY="6.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="6">
+               <children>
+                  <Label layoutX="3.0" layoutY="-3.0" prefHeight="34.0" prefWidth="20.0" style="-fx-background-color: lightgreen;" text="男&#10;13" />
+                  <Label fx:id="l1_10" layoutX="10.0" layoutY="7.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_10" layoutX="12.0" layoutY="7.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_10" layoutX="29.0" layoutY="8.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="5">
+               <children>
+                  <Label layoutX="3.0" layoutY="2.0" prefHeight="34.0" prefWidth="20.0" style="-fx-background-color: lightgreen;" text="大&#10;講&#10;" />
+                  <Label fx:id="l1_11" layoutX="11.0" layoutY="12.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_11" layoutX="12.0" layoutY="11.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_11" layoutX="29.0" layoutY="13.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="3">
+               <children>
+                  <Label layoutX="3.0" layoutY="2.0" prefHeight="42.0" prefWidth="20.0" style="-fx-background-color: lightgreen;" text="文&#10;院" />
+                  <Label fx:id="l1_13" layoutX="12.0" layoutY="14.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_13" layoutX="14.0" layoutY="13.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_13" layoutX="29.0" layoutY="15.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="3.0" layoutY="3.0" prefHeight="48.0" prefWidth="20.0" style="-fx-background-color: lightgreen;" text="國&#10;鼎" />
+                  <Label fx:id="l1_15" layoutX="12.0" layoutY="19.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_15" layoutX="12.0" layoutY="19.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_15" layoutX="28.0" layoutY="20.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8">
+               <children>
+                  <Label fx:id="l1_16" layoutX="12.0" layoutY="19.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_16" layoutX="12.0" layoutY="20.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_16" layoutX="29.0" layoutY="22.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+                  <Label layoutX="12.0" layoutY="12.0" prefHeight="34.0" prefWidth="32.0" text="休息&#10;一下" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6">
+               <children>
+                  <Label layoutX="3.0" layoutY="35.0" prefHeight="18.0" prefWidth="72.0" style="-fx-background-color: brown;" text="男九宿舍" textFill="WHITE" />
+                  <Label fx:id="l1_18" layoutX="21.0" layoutY="18.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_18" layoutX="21.0" layoutY="18.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_18" layoutX="44.0" layoutY="20.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5">
+               <children>
+                  <Label layoutX="1.0" layoutY="35.0" prefHeight="18.0" prefWidth="77.0" style="-fx-background-color: brown;" text="志希館" textFill="WHITE" />
+                  <Label fx:id="l1_19" layoutX="23.0" layoutY="18.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_19" layoutX="23.0" layoutY="18.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_19" layoutX="51.0" layoutY="20.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+               <children>
+                  <Label layoutX="4.0" layoutY="35.0" prefHeight="18.0" prefWidth="66.0" style="-fx-background-color: brown;" text="鴻經管" textFill="#f6f2f2" />
+                  <Label fx:id="l1_21" layoutX="17.0" layoutY="18.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_21" layoutX="17.0" layoutY="20.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_21" layoutX="35.0" layoutY="18.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label layoutX="-1.0" layoutY="35.0" prefHeight="18.0" prefWidth="60.0" style="-fx-background-color: brown;" text="綜教館" textAlignment="CENTER" textFill="#f6f4f4" />
+                  <Label fx:id="l1_23" layoutX="16.0" layoutY="18.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_23" layoutX="16.0" layoutY="20.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_23" layoutX="40.0" layoutY="20.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="33.0" layoutY="2.0" prefHeight="48.0" prefWidth="14.0" style="-fx-background-color: orange;" text="百&#10;花&#10;川">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Label>
+                  <Label fx:id="l1_25" layoutX="7.0" layoutY="17.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_25" layoutX="7.0" layoutY="19.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_25" layoutX="24.0" layoutY="20.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Label fx:id="l1_27" layoutX="8.0" layoutY="14.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_27" layoutX="7.0" layoutY="15.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_27" layoutX="24.0" layoutY="15.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+                  <Label layoutX="33.0" layoutY="3.0" prefHeight="42.0" prefWidth="14.0" style="-fx-background-color: orange;" text="依&#10;仁&#10;堂">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+               <children>
+                  <Label layoutX="33.0" layoutY="4.0" prefHeight="34.0" prefWidth="14.0" style="-fx-background-color: orange;" text="總&#10;圖" />
+                  <Label fx:id="l1_29" layoutX="7.0" layoutY="13.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_29" layoutX="7.0" layoutY="14.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_29" layoutX="24.0" layoutY="13.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+               <children>
+                  <Label layoutX="33.0" layoutY="1.0" prefHeight="34.0" prefWidth="14.0" style="-fx-background-color: orange;" text="奇&#10;觀" />
+                  <Label fx:id="l1_30" layoutX="7.0" layoutY="9.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_30" layoutX="7.0" layoutY="9.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_30" layoutX="24.0" layoutY="9.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="7">
+               <children>
+                  <Label layoutX="33.0" layoutY="3.0" prefHeight="26.0" prefWidth="14.0" style="-fx-background-color: orange;" text="工&#10;五">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Label>
+                  <Label fx:id="l1_31" layoutX="7.0" layoutY="7.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_31" layoutX="7.0" layoutY="9.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+                  <Label fx:id="h_31" layoutX="24.0" layoutY="7.0" prefHeight="18.0" prefWidth="20.0" style="-fx-background-color: lightyellow;" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Label fx:id="event1" layoutX="28.0" layoutY="16.0" prefHeight="20.0" prefWidth="45.0" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <children>
+                  <Label fx:id="event2" layoutX="27.0" layoutY="11.0" prefHeight="20.0" prefWidth="45.0" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <children>
+                  <Label fx:id="GO2" layoutX="8.0" layoutY="5.0" prefHeight="30.0" prefWidth="56.0" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <children>
+                  <Label fx:id="GO1" layoutX="8.0" layoutY="6.0" prefHeight="30.0" prefWidth="56.0" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
+               <children>
+                  <Label fx:id="time" layoutX="8.0" layoutY="1.0" prefHeight="34.0" prefWidth="56.0" text="Label" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <children>
+                  <Button fx:id="game" layoutX="-9.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onExitPressed" prefHeight="34.0" prefWidth="72.0" text="結束遊戲" visible="false" />
+                  <Button layoutX="5.0" layoutY="-1.0" minWidth="45.0" mnemonicParsing="false" onAction="#onOptionsPressed" prefHeight="30.0" prefWidth="45.0" style="-fx-background-color: black;" text="說明" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="8">
+               <children>
+                  <Label fx:id="l1_4" layoutX="28.0" layoutY="12.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_4" layoutX="29.0" layoutY="12.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+               <children>
+                  <Label fx:id="l1_28" layoutX="21.0" layoutY="15.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_28" layoutX="21.0" layoutY="18.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+               <children>
+                  <Label fx:id="l1_20" layoutX="29.0" layoutY="24.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_20" layoutX="29.0" layoutY="26.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="4">
+               <children>
+                  <Label fx:id="l1_12" layoutX="23.0" layoutY="20.0" style="-fx-background-color: lightblue;" text="1" visible="false" />
+                  <Label fx:id="l2_12" layoutX="22.0" layoutY="19.0" style="-fx-background-color: lightpink;" text="2" visible="false" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="4">
+               <children>
+                  <Label layoutX="48.0" layoutY="20.0" text="正門" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="17.0" layoutY="6.0" text="中大湖" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Label layoutX="-1.0" layoutY="20.0" text="後門" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="7">
+               <children>
+                  <Label layoutX="14.0" layoutY="9.0" text="宵夜街" />
+               </children>
+            </Pane>
+            <Button fx:id="check2" mnemonicParsing="false" onAction="#checkland2" text="Check" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</Pane>
